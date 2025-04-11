@@ -31,10 +31,11 @@ public class Player : MonoBehaviour
 
         // Move the player in the direction of the input
         Vector3 pos_delta = direction * move_speed_ * Time.deltaTime;
-        if (transform.position.y + pos_delta.y > -4.5f && transform.position.y + pos_delta.y < 4.5f) // If the player is out of bounds on the top
+        if (transform.position.y + pos_delta.y < -4.5f || transform.position.y + pos_delta.y > 4.5f) // If the player is out of bounds on the top
         {
-            transform.position += direction * move_speed_ * Time.deltaTime;
+            pos_delta.y = 0; // Set the vertical movement to 0
         }
+        transform.position += pos_delta; // Update the player's position
     }
 
     private void OnTriggerEnter2D(Collider2D other)
