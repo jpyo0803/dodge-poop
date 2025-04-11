@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
             direction.Normalize();
 
         // Move the player in the direction of the input
-        transform.position += direction * move_speed_ * Time.deltaTime;
+        Vector3 pos_delta = direction * move_speed_ * Time.deltaTime;
+        if (transform.position.y + pos_delta.y > -4.5f && transform.position.y + pos_delta.y < 4.5f) // If the player is out of bounds on the top
+        {
+            transform.position += direction * move_speed_ * Time.deltaTime;
+        }
     }
 }
