@@ -14,7 +14,12 @@ public class Reward : MonoBehaviour
     void Update()
     {
         // For each unit time, it move up
-        transform.position += new Vector3(0, move_speed_ * Time.deltaTime, 0);
+        Vector3 pos_delta = new Vector3(0, move_speed_ * Time.deltaTime, 0); // Create a new vector for the movement direction
+        // Create rotation around the Z axis 
+        Quaternion rotation = Quaternion.Euler(0, 0, 45 * Time.deltaTime); // Create a rotation around the Z axis
+
+        transform.position += pos_delta;
+        transform.rotation *= rotation; // Apply the rotation to the reward object
         if (transform.position.y >= 10f) // If the reward has moved up by 10 units
         {
             // Destroy the reward object
