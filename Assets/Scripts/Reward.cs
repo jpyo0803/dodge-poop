@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Reward : MonoBehaviour
 {
+    [SerializeField] private int score_ = 1; // Score to be added when the reward is collected
     [SerializeField] private float move_speed_ = 2f; // Speed of the reward movement
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,5 +20,10 @@ public class Reward : MonoBehaviour
             // Destroy the reward object
             Destroy(gameObject); // Destroy the reward object
         }
+    }
+
+    public int GetScore()
+    {
+        return score_; // Return the score of the reward
     }
 }

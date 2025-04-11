@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3432103089044459057}
   - component: {fileID: 8223387773384660184}
   m_Layer: 0
-  m_Name: Reward
+  m_Name: Reward2
   m_TagString: Reward
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -426231959601733858, guid: 60c82fce26d290849ad3ff1da1a566cf, type: 3}
+  m_Sprite: {fileID: -2154472756403814111, guid: 60c82fce26d290849ad3ff1da1a566cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afbc16dbe284694c997f6d72f7ecbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed_: 2
+  score_: 3
+  move_speed_: 4
 --- !u!50 &-3432103089044459057
 Rigidbody2D:
   serializedVersion: 5

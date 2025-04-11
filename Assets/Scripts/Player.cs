@@ -43,7 +43,8 @@ public class Player : MonoBehaviour
         
         if (other.CompareTag("Reward")) // If the player collides with a reward
         {
-            GameManager.instance.UpdateScore(1); // Update the score in the GameManager
+            Reward reward = other.GetComponent<Reward>(); // Get the Reward component from the collided object
+            GameManager.instance.UpdateScore(reward.GetScore()); // Update the score in the GameManager
             Destroy(other.gameObject); // Destroy the reward object
             Debug.Log("Reward collected!"); // Log the collection of the reward
         }
