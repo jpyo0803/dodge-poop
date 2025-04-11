@@ -20,13 +20,4 @@ public class Reward : MonoBehaviour
             Destroy(gameObject); // Destroy the reward object
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player")) // If the player collides with the reward
-        {
-            // Destroy the reward object
-            Destroy(gameObject); // Destroy the reward object
-        }
-    }
 }

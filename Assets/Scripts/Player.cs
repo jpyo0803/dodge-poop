@@ -36,4 +36,16 @@ public class Player : MonoBehaviour
             transform.position += direction * move_speed_ * Time.deltaTime;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Player collided with: " + other.name); // Log the name of the object collided with
+        
+        if (other.CompareTag("Reward")) // If the player collides with a reward
+        {
+            GameManager.instance.UpdateScore(1); // Update the score in the GameManager
+            Destroy(other.gameObject); // Destroy the reward object
+            Debug.Log("Reward collected!"); // Log the collection of the reward
+        }
+    }
 }
